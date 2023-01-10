@@ -33,6 +33,7 @@ public partial class AddManufacturer : System.Web.UI.Page
             ad.InsertCommand.ExecuteNonQuery();
             con.Close();
             reset();
+            //reset();
         }
         catch (Exception ex)
         {
