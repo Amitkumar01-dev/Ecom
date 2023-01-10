@@ -26,11 +26,20 @@ public partial class AddManufacturer : System.Web.UI.Page
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        ad.InsertCommand = new SqlCommand("Insert into tblManufacturerMast (M_Name, AddedBy, AddedBy_Date, UpdatedBy, UpdatedBy_Date, IP, MAC) values ('" + txtManufacturer.Text+"','','','','','','')", con);
-        con.Open();
-        ad.InsertCommand.ExecuteNonQuery();
-        con.Close();
-        reset();
+        try
+        {
+            ad.InsertCommand = new SqlCommand("Insert into tblManufacturerMast (M_Name, AddedBy, AddedBy_Date, UpdatedBy, UpdatedBy_Date, IP, MAC) values ('" + txtManufacturer.Text + "','','','','','','')", con);
+            con.Open();
+            ad.InsertCommand.ExecuteNonQuery();
+            con.Close();
+            reset();
+        }
+        catch (Exception ex)
+        {
+
+            //throw;
+        }
+        
 
     }
 }
