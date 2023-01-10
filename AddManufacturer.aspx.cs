@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,11 +28,11 @@ public partial class AddManufacturer : System.Web.UI.Page
     {
         try
         {
-            //ad.InsertCommand = new SqlCommand("Insert into tblManufacturerMast (M_Name, AddedBy, AddedBy_Date, UpdatedBy, UpdatedBy_Date, IP, MAC) values ('" + txtManufacturer.Text + "','','','','','','')", con);
-            //con.Open();
-            //ad.InsertCommand.ExecuteNonQuery();
-            //con.Close();
-            //reset();
+            ad.InsertCommand = new SqlCommand("Insert into tblManufacturerMast (M_Name, AddedBy, AddedBy_Date, UpdatedBy, UpdatedBy_Date, IP, MAC) values ('" + txtManufacturer.Text + "','','','','','','')", con);
+            con.Open();
+            ad.InsertCommand.ExecuteNonQuery();
+            con.Close();
+            reset();
         }
         catch (Exception ex)
         {
